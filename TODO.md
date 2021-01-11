@@ -1,5 +1,9 @@
 # Tasks
 
+## `REPL`
+
+A repl is required as fast as possible so that people can use the library easily.
+
 ## `IO`
 
 Implement `IO` in functions like:

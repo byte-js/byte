@@ -103,6 +103,28 @@ $ cargo run index.js hello world
 $
 ```
 
+## '`abort()`
+
+The process can b stopped with the help of the `abort()` which can take an optional argument `message` which is displayed just before the process is aborted
+
+`abort(message : any)`
+
+```javascript
+log("This is the log function");
+const res = input("Is HTML a programming language : ");
+if (res == "y") {
+  abort("You are upto no good!");
+}
+log(`Correct. Your answer was : ${res}`);
+```
+
+```bash
+$ cargo run index.js
+Is HTML a programming language : y
+You are upto no good!
+$
+```
+
 # Usage
 
 To build the project , make sure that you have the following installed :
