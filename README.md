@@ -6,6 +6,14 @@ Byte is a easy and productive runtime for Javascript . It makes making complex p
 
 The aim for Byte is that modern javascript runtimes are not easy to learn and usually there is a learning curve of about a month to gain knowledge and get comfortable in the software. With Byte, this learning curve is reduced to about a day. With lightning fast `IO` , Byte will attract users rapidly.
 
+# Install
+
+To install, paste the following command inside of your terminal:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/byte-js/byte/master/install.sh | sh
+```
+
 # Features
 
 ## Speed
