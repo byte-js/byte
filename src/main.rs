@@ -1,18 +1,17 @@
 use rusty_v8 as v8;
 use std::env;
 use std::io::Read;
-use std::process;
 mod fs;
 mod repl;
 mod utils;
-use fs::homedir;
+use utils::abort;
 // use utils::args;
 use utils::exec;
 use utils::input;
 use utils::log;
 
 #[warn(unused_variables)]
-fn main() {
+pub fn main() {
     let argv: Vec<String> = env::args().collect();
     if argv.len() == 1 {
         repl::main();
@@ -22,7 +21,7 @@ fn main() {
     let mut code = String::new();
     file.read_to_string(&mut code).unwrap();
 
-    //Create the platform
+    // Create the platform
     let platform = v8::new_default_platform().unwrap();
     v8::V8::initialize_platform(platform);
     v8::V8::initialize();
@@ -54,13 +53,13 @@ fn main() {
         let exec = v8::String::new(scope, "exec").unwrap();
         object_template.set(exec.into(), exec_tmpl.into());
 
-        let abort_tmpl = v8::FunctionTemplate::new(scope, abort);
+        let abort_tmpl = v8::FunctionTemplate::new(scope, abort::abort);
         let abort = v8::String::new(scope, "abort").unwrap();
         object_template.set(abort.into(), abort_tmpl.into());
 
-        let hd_tmpl = v8::FunctionTemplate::new(scope, homedir::main);
-        let hd = v8::String::new(scope, "homedir").unwrap();
-        object_template.set(hd.into(), hd_tmpl.into());
+        // let hd_tmpl = v8::FunctionTemplate::new(scope, homedir::main);
+        // let hd = v8::String::new(scope, "homedir").unwrap();
+        // object_template.set(hd.into(), hd_tmpl.into());
 
         // let function_template = v8::FunctionTemplate::new(scope, args::args);
         // let name = v8::String::new(scope, "args").unwrap();
@@ -76,17 +75,4 @@ fn main() {
         //Run the script
         script.run(scope);
     }
-}
-
-fn abort(scope: &mut v8::HandleScope, args: v8::FunctionCallbackArguments, _rv: v8::ReturnValue) {
-    if args.length() > 0 {
-        println!(
-            "{}",
-            args.get(0)
-                .to_string(scope)
-                .unwrap()
-                .to_rust_string_lossy(scope)
-        );
-    }
-    process::exit(1)
 }

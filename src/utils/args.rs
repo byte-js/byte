@@ -7,5 +7,6 @@
 //     _args: v8::FunctionCallbackArguments,
 //     mut rv: v8::ReturnValue,
 // ) {
-//     rv.set();
+//     let args = env::args();
+//     rv.set(v8::);
 // }
