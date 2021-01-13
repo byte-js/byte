@@ -22,7 +22,8 @@ fi
 curl --fail --location --progress-bar --output "$exe.zip" "$byte_uri"
 unzip -d "$bin_dir" -o "$exe.zip"
 chmod +x "$exe"
-export PATH="$HOME/.byte/bin/:$PATH"
+export BYTE_INSTALL=\"$byte_install\"
+export PATH=\"\$BYTE_INSTALL/bin:\$PATH\"
 rm "$exe.zip"
 
 echo "Byte was installed successfully to $exe"
