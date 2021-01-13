@@ -3,7 +3,7 @@ use colored::*;
 pub fn main() {
     println!(
         "
-    Byte v0.0.1
+    Byte v0.0.2
     A JavaScript Runtime Engine that aims for productivity
 
     Docs: {}

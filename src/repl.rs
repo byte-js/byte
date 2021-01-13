@@ -6,7 +6,7 @@ pub fn main() {
     //     opt.v8_options
     //         .map(|o| o.split(' ').map(|s| s.to_owned()).collect()),
     // );
-    println!("Welcome to Byte verson 0.0.1");
+    println!("Welcome to Byte v0.0.2");
     println!("Type .help for more information");
     loop {
         let mut res = String::new();

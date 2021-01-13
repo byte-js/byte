@@ -39,7 +39,7 @@ pub fn main() {
         help::main();
         return;
     } else if argv[1].clone() == "-V" || argv[1].clone() == "--version" {
-        println!("Byte v0.0.1");
+        println!("Byte v0.0.2");
         return;
     }
     // Create the platform
