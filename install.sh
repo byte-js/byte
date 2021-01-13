@@ -9,7 +9,7 @@ if ! command -v unzip >/dev/null; then
 	exit 1
 fi
 
-byte_uri="https://github.com/byte-js/byte/releases/download/v0.0.1/byte.zip"
+byte_uri="https://github.com/byte-js/byte/releases/download/0.0.2/byte.zip"
 
 byte_install="${BYTE_INSTALL:-$HOME/.byte}"
 bin_dir="$byte_install/bin"
