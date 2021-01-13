@@ -16,5 +16,6 @@ dirs = "3.0.1"
 colored = "2"
 # jstime = "0.20.1"
 
+# See https://github.com/mmstick/cargo-deb
 [package.metadata.deb]
 section = "interpreters"
