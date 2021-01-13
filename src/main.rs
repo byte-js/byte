@@ -1,8 +1,15 @@
 use rusty_v8 as v8;
 use std::env;
 use std::io::Read;
+use std::process;
+// Cli messages import
+mod cli;
+use cli::help;
+// File system imports
 mod fs;
+//Repl imports
 mod repl;
+//Utility function imports
 mod utils;
 use utils::abort;
 // use utils::args;
@@ -10,17 +17,31 @@ use utils::exec;
 use utils::input;
 use utils::log;
 
-#[warn(unused_variables)]
 pub fn main() {
     let argv: Vec<String> = env::args().collect();
+    let mut code = String::new();
     if argv.len() == 1 {
         repl::main();
         return;
     }
-    let mut file = std::fs::File::open(argv[1].clone()).unwrap();
-    let mut code = String::new();
-    file.read_to_string(&mut code).unwrap();
+    if argv[1].clone() == "run" && argv.len() == 3 {
+        let mut file = std::fs::File::open(argv[2].clone()).unwrap();
+        file.read_to_string(&mut code).unwrap();
+    } else if argv[1].clone() == "run" && argv.len() == 3 {
+        println!("Usage : byte run <filename>");
+        process::exit(1);
+    } else if argv[1].clone() == "repl" {
+        repl::main();
+        return;
+    }
 
+    if argv[1].clone() == "help" || argv[1].clone() == "-h" {
+        help::main();
+        return;
+    } else if argv[1].clone() == "-V" || argv[1].clone() == "--version" {
+        println!("Byte v0.0.1");
+        return;
+    }
     // Create the platform
     let platform = v8::new_default_platform().unwrap();
     v8::V8::initialize_platform(platform);

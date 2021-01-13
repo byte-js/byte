@@ -1,5 +1,5 @@
-// use jstime;
 use std::io::{stdin, stdout, Write};
+use std::process;
 
 pub fn main() {
     // jstime::init(
@@ -21,10 +21,24 @@ pub fn main() {
         if let Some('\r') = res.chars().next_back() {
             res.pop();
         }
-        println!("{}", res);
-        // match jstime.run_script(&res, "REPL") {
-        //     Ok(v) => println!("{}", v),
-        //     Err(e) => eprintln!("Uncaught: {}", e),
-        // }
+
+        if res == "exit()" {
+            process::exit(1);
+        } else if res == "help()" {
+            replhelp();
+        } else if res == "authors()" {
+            println!("The Byte Authors :\n* Japroz Saini <sainijaproz@gmail.com> - Core");
+        }
     }
+}
+
+fn replhelp() {
+    println!(
+        "
+    Commands:
+    * help() - Get this message
+    * exit() - Exit the REPL
+    * authors() - Get the name of the authors who worked on Byte
+    "
+    );
 }

@@ -22,11 +22,12 @@ fi
 curl --fail --location --progress-bar --output "$exe.zip" "$byte_uri"
 unzip -d "$bin_dir" -o "$exe.zip"
 chmod +x "$exe"
+export PATH="$HOME/.byte/bin/:$PATH"
 rm "$exe.zip"
 
 echo "Byte was installed successfully to $exe"
 if command -v byte >/dev/null; then
-	echo "Run 'byte --help' to get started"
+	echo "Run 'byte help' to get started"
 else
 	case $SHELL in
 	/bin/zsh) shell_profile=".zshrc" ;;
