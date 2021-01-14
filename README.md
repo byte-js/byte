@@ -210,20 +210,3 @@ After that, the build will be complete. The binary will be located in the `targe
 # Developer Help
 
 `Byte` is still in its early stages and we want all the help that we can get. We encourage developers to create `PR's` and join the organisation so that the software can be improved and made better
-
-# Authors
-
-```
-name,
-email,
-github,
-twitter
-```
-
-```bash
-Japroz Singh Saini,
-<sainijaproz@gmail.com>,
-@Japroz-Saini,
-@JaprozSaini
-```
-
