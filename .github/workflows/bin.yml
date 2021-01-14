@@ -1,4 +1,4 @@
-name: Integrate Pull Request
+name: Run the software
 
 on:
   push:
@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Build
-        run: cargo build --verbose
-      - name: Run tests
-        run: cargo test --verbose
+      - name: Run the program
+        run: cargo run help
+      - name: Check the current version
+        run: cargo run -V
