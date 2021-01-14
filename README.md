@@ -227,24 +227,3 @@ Japroz Singh Saini,
 @JaprozSaini
 ```
 
-# Technical Info
-
-All the info for `Byte` is stored in the `tech.json` file in the root directory of the project.
-
-```json
-{
-  "name": "Byte",
-  "version": "0.0.1",
-  "license": "MIT",
-  "languages": ["rust", "toml", "MakeFile", "json"],
-  "compatibility": ["Windows (64 bit)", "MacOS", "Linux"],
-  "authors": [
-    {
-      "name": "Japroz Singh Saini",
-      "email": "sainijaproz@gmail.com",
-      "github": "@Japroz-Saini",
-      "twitter": "@JaprozSaini"
-    }
-  ]
-}
-```
