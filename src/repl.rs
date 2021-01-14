@@ -8,6 +8,7 @@ pub fn main() {
     // );
     println!("Welcome to Byte v0.0.2");
     println!("Type .help for more information");
+    println!("Type .exit to close the REPL");
     loop {
         let mut res = String::new();
         print!("> ");
@@ -22,11 +23,11 @@ pub fn main() {
             res.pop();
         }
 
-        if res == "exit()" {
+        if res == ".exit" {
             process::exit(1);
-        } else if res == "help()" {
+        } else if res == ".help" {
             replhelp();
-        } else if res == "authors()" {
+        } else if res == ".authors" {
             println!("The Byte Authors :\n* Japroz Saini <sainijaproz@gmail.com> - Core");
         }
     }
@@ -36,9 +37,9 @@ fn replhelp() {
     println!(
         "
     Commands:
-    * help() - Get this message
-    * exit() - Exit the REPL
-    * authors() - Get the name of the authors who worked on Byte
+    * .help - Get this message
+    * .exit - Exit the REPL
+    * .authors - Get the name of the authors who worked on Byte
     "
     );
 }

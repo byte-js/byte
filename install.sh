@@ -23,9 +23,9 @@ curl --fail --location --progress-bar --output "$exe.zip" "$byte_uri"
 unzip -d "$bin_dir" -o "$exe.zip"
 chmod +x "$exe"
 rm "$exe.zip"
-echo 'export PATH=$HOME/.byte/bin:$PATH' >>$HOME/.bash_profile
-echo 'export PATH=$HOME/.byte/bin:$PATH' >>$HOME/.zshrc
-echo 'export PATH=$HOME/.byte/bin:$PATH' >>$HOME/.bashrc
+echo "export PATH=$HOME/.byte/bin:$PATH" >>$HOME/.bash_profile
+echo "export PATH=$HOME/.byte/bin:$PATH" >>$HOME/.zshrc
+echo "export PATH=$HOME/.byte/bin:$PATH" >>$HOME/.bashrc
 
 echo "Byte was installed successfully to $exe"
 if command -v byte >/dev/null; then
