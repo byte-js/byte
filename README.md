@@ -14,6 +14,9 @@ To install, paste the following command inside of your terminal:
 curl -fsSL https://raw.githubusercontent.com/byte-js/byte/master/install.sh | sh
 ```
 
+## Packaging (.deb)
+We use [cargo-deb](https://github.com/mmstick/cargo-deb) to make .deb packages. Read their documentation to build a package locally.
+
 # Features
 
 ## Speed
